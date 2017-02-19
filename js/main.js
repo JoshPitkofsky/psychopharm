@@ -121,9 +121,7 @@ function antichole(){
 	drugs.Doxepin = drugs.Doxepin - 1;
 	drugs.Clomipramine = drugs.Clomipramine - 1;
 	sortList();
-
 	}
-
 }
 
 function liver(){
@@ -178,6 +176,71 @@ function insomnia(){
 	}
 }
 
+function age(){
+	var checkedValue = document.getElementById('age').checked;
+	if(checkedValue){
+	drugs.Imipramine = drugs.Imipramine + 2;
+	drugs.Desipramine = drugs.Desipramine + 4;
+	drugs.Trimipramine = drugs.Trimipramine + 2;
+	drugs.Protriptyline = drugs.Protriptyline + 2;
+	drugs.Nortriptyline = drugs.Nortriptyline + 3;
+	drugs.Amitripyline = drugs.Amitripyline + 2;
+	drugs.Doxepin = drugs.Doxepin + 2;
+	drugs.Clomipramine = drugs.Clomipramine + 2;
+	sortList();
+	}
+	else{
+	drugs.Imipramine = drugs.Imipramine - 2;
+	// desipramine 12 cases of sudden death in children receiving for adhd or depression
+	drugs.Desipramine = drugs.Desipramine - 4;
+	drugs.Trimipramine = drugs.Trimipramine - 2;
+	drugs.Protriptyline = drugs.Protriptyline - 2;
+	drugs.Nortriptyline = drugs.Nortriptyline - 3;
+	drugs.Amitripyline = drugs.Amitripyline - 2;
+	drugs.Doxepin = drugs.Doxepin - 2;
+	drugs.Clomipramine = drugs.Clomipramine - 2;
+	sortList();
+	}
+}
 
+function panic(){
+	var checkedValue = document.getElementById('panic').checked;
+	if(checkedValue){
+	drugs.Bupropion = drugs.Bupropion + 3;
+	drugs.Fluvoxamine = drugs.Fluvoxamine - 2;
+	drugs.Fluoxetine = drugs.Fluoxetine - 2;
+	drugs.Sertraline = drugs.Sertraline - 1;
+	drugs.Paroxetine = drugs.Paroxetine - 2;
+	drugs.Citalopram = drugs.Citalopram - 1;
+	drugs.Escitalopram = drugs.Escitalopram - 1;
+	drugs.Vilazodone = drugs.Vilazodone - 1;
+	drugs.Vortioxetine = drugs.Vortioxetine - 1;
+	sortList();
+	}
+	else{
+	drugs.Bupropion = drugs.Bupropion - 3;
+	drugs.Fluvoxamine = drugs.Fluvoxamine + 2;
+	drugs.Fluoxetine = drugs.Fluoxetine + 2;
+	drugs.Sertraline = drugs.Sertraline + 1;
+	drugs.Paroxetine = drugs.Paroxetine + 2;
+	drugs.Citalopram = drugs.Citalopram + 1;
+	drugs.Escitalopram = drugs.Escitalopram + 1;
+	drugs.Vilazodone = drugs.Vilazodone + 1;
+	drugs.Vortioxetine = drugs.Vortioxetine + 1;
+	sortList();
+	}
+}
+
+function adhd(){
+	var checkedValue = document.getElementById('adhd').checked;
+	if(checkedValue){
+	drugs.Atomoxetine = drugs.Atomoxetine - 2;
+	sortList();
+	}
+	else{
+	drugs.Atomoxetine = drugs.Atomoxetine + 2;
+	sortList();
+	}
+}
 
 
