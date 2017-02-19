@@ -47,8 +47,10 @@ Nortriptyline:0,
 Amitripyline:0,
 Doxepin:0,
 Clomipramine:0,
-Amoxapine:0,
-Maprotiline:0,
+//Amoxapine Generally not first choice, overdose can be fatal, slightly better at relieving agitation and anxiety than imipramine
+Amoxapine: 2,
+//Can cause seizures, generally not antidepressant of first choice
+Maprotiline: 2,
 Trazodone:0,
 Bupropion:0,
 Venlafaxine:0,
@@ -78,30 +80,103 @@ Folate:0,
 s_adenosylmethionine:0,
 st_johns_wort:0
 }
-
-
-function antichole(){
-	var checkedValue = document.getElementById('antichol').checked;
-	console.log("checked "+checkedValue); 
-
+sortList();
+function sortList(){
 	var sortable = [];
 	for (var drug in drugs)
 	    sortable.push([drug, drugs[drug]])
-
-	sortable.sort(function(a, b) {
+		sortable.sort(function(a, b) {
 	    return a[1] - b[1]
-})
+	})
 	var html = "";
 	for (var i =0; i < sortable.length; i++) {
-		console.log(sortable[i][0]);
 	    html += "<li><a href=\"#\" class=\"ui-btn ui-btn-icon-right ui-icon-carat-r\">" + eval(sortable[i][0])+ "</a></li>";
-
-	   
 	}
 	document.getElementById("medlist").innerHTML = html;
+}
+
+function antichole(){
+/*	Make drug specific changes here
+	Addition means worse choice for treating patient
+	Subtraction means better choice for treating patient */
+	var checkedValue = document.getElementById('antichol').checked;
+	if(checkedValue){
+	drugs.Imipramine = drugs.Imipramine + 1;
+	drugs.Desipramine = drugs.Desipramine + 2;
+	drugs.Trimipramine = drugs.Trimipramine + 1;
+	drugs.Protriptyline = drugs.Protriptyline + 1;
+	drugs.Nortriptyline = drugs.Nortriptyline + 1;
+	drugs.Amitripyline = drugs.Amitripyline + 1;
+	drugs.Doxepin = drugs.Doxepin + 1;
+	drugs.Clomipramine = drugs.Clomipramine + 1;
+	sortList();
+	}
+	else{
+	drugs.Imipramine = drugs.Imipramine - 1;
+	drugs.Desipramine = drugs.Desipramine - 2;
+	drugs.Trimipramine = drugs.Trimipramine - 1;
+	drugs.Protriptyline = drugs.Protriptyline - 1;
+	drugs.Nortriptyline = drugs.Nortriptyline - 1;
+	drugs.Amitripyline = drugs.Amitripyline - 1;
+	drugs.Doxepin = drugs.Doxepin - 1;
+	drugs.Clomipramine = drugs.Clomipramine - 1;
+	sortList();
+
+	}
 
 }
 
+function liver(){
+	var checkedValue = document.getElementById('liver').checked;
+	if(checkedValue){
+	drugs.Nefazodone = drugs.Nefazodone + 2;
+	sortList();
+	}
+	else{
+	drugs.Nefazodone = drugs.Nefazodone - 2;
+	sortList();
+	}
+}
+
+function tcaHistory(){
+	var checkedValue = document.getElementById('tcaHistory').checked;
+	if(checkedValue){
+	drugs.Imipramine = drugs.Imipramine - 1;
+	drugs.Desipramine = drugs.Desipramine - 2;
+	drugs.Trimipramine = drugs.Trimipramine - 1;
+	drugs.Protriptyline = drugs.Protriptyline - 1;
+	drugs.Nortriptyline = drugs.Nortriptyline - 2;
+	drugs.Amitripyline = drugs.Amitripyline - 1;
+	drugs.Doxepin = drugs.Doxepin - 1;
+	drugs.Clomipramine = drugs.Clomipramine - 1;
+	sortList();
+	}
+	else{
+	drugs.Imipramine = drugs.Imipramine + 1;
+	drugs.Desipramine = drugs.Desipramine + 2;
+	drugs.Trimipramine = drugs.Trimipramine + 1;
+	drugs.Protriptyline = drugs.Protriptyline + 1;
+	drugs.Nortriptyline = drugs.Nortriptyline + 2;
+	drugs.Amitripyline = drugs.Amitripyline + 1;
+	drugs.Doxepin = drugs.Doxepin + 1;
+	drugs.Clomipramine = drugs.Clomipramine + 1;
+	sortList();
+	}
+}
+
+function insomnia(){
+	var checkedValue = document.getElementById('insomnia').checked;
+	if(checkedValue){
+	drugs.Doxepin = drugs.Doxepin - 2;
+	drugs.Amitripyline = drugs.Amitripyline - 2;
+	sortList();
+	}
+	else{
+	drugs.Doxepin = drugs.Doxepin + 2;
+	drugs.Amitripyline = drugs.Amitripyline + 2;
+	sortList();
+	}
+}
 
 
 
