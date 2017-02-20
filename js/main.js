@@ -443,7 +443,6 @@ function hormone() {
         drugs.Trimipramine = drugs.Trimipramine + 1;
         drugs.Amoxapine = drugs.Amoxapine + 1;
         drugs.Maprotiline = drugs.Maprotiline + 1;
-
         sortList();
     } else {
         drugs.Fluoxetine = drugs.Fluoxetine - 1;
