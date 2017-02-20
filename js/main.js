@@ -39,11 +39,22 @@ var st_johns_wort ="st.john's wort";
 
 
 var drugs = {
+//currently generally in order of best choice
+Sertraline:-1,
+Escitalopram:-1,
+Citalopram:-1,
+Mirtazapine:-1,
+Venlafaxine:-1,
+Paroxetine:-1,
+Bupropion:-1,
+Fluoxetine:-1,
+Fluvoxamine:-1,
+Duloxetine:-1,
+Nortriptyline:-1,
+Desipramine:-1,
 Imipramine:0,
-Desipramine:0,
 Trimipramine:0,
 Protriptyline:0,
-Nortriptyline:0,
 Amitripyline:0,
 Doxepin:0,
 Clomipramine:0,
@@ -52,20 +63,10 @@ Amoxapine: 2,
 //Can cause seizures, generally not antidepressant of first choice
 Maprotiline: 2,
 Trazodone:0,
-Bupropion:0,
-Venlafaxine:0,
 Desvenlafaxine:0,
-Fluoxetine:0,
-Sertraline:0,
-Paroxetine:0,
-Citalopram:0,
-Fluvoxamine:0,
-Escitalopram:0,
 Vilazodone:0,
 Vortioxetine:0,
 Nefazodone:0,
-Mirtazapine:0,
-Duloxetine:0,
 Phenelzine:0,
 Isocarboxazid:0,
 Tranylcypromine:0,
@@ -75,10 +76,10 @@ Reboxetine:0,
 Modafinil:0,
 Lamotrigine:0,
 quetiapine:0,
-Omega_3:0,
-Folate:0,
-s_adenosylmethionine:0,
-st_johns_wort:0
+Omega_3:2,
+Folate:2,
+s_adenosylmethionine:2,
+st_johns_wort:2
 }
 sortList();
 function sortList(){
@@ -239,6 +240,75 @@ function adhd(){
 	}
 	else{
 	drugs.Atomoxetine = drugs.Atomoxetine + 2;
+	sortList();
+	}
+}
+
+function nasal(){
+	var checkedValue = document.getElementById('nasal').checked;
+	if(checkedValue){
+	drugs.Phenelzine = drugs.Phenelzine + 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid + 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine + 2;
+	sortList();
+	}
+	else{
+	drugs.Phenelzine = drugs.Phenelzine - 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid - 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine - 2;
+	sortList();
+	}
+}
+
+function diet(){
+	var checkedValue = document.getElementById('diet').checked;
+	if(checkedValue){
+	drugs.Phenelzine = drugs.Phenelzine + 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid + 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine + 2;
+	sortList();
+	}
+	else{
+	drugs.Phenelzine = drugs.Phenelzine - 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid - 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine - 2;
+	sortList();
+	}
+}
+
+function atypical(){
+	var checkedValue = document.getElementById('atypical').checked;
+	if(checkedValue){
+	drugs.Phenelzine = drugs.Phenelzine - 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid - 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine - 2;
+	drugs.Selegiline = drugs.Selegiline - 2;
+	drugs.Venlafaxine = drugs.Venlafaxine + 2;
+
+	sortList();
+	}
+	else{
+	drugs.Phenelzine = drugs.Phenelzine + 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid + 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine + 2;
+	drugs.Selegiline = drugs.Selegiline + 2;
+	drugs.Venlafaxine = drugs.Venlafaxine - 2;
+	sortList();
+	}
+}
+
+function breastfeeding(){
+	var checkedValue = document.getElementById('breastfeeding').checked;
+	if(checkedValue){
+	drugs.Escitalopram = drugs.Escitalopram + 2;
+	drugs.Citalopram = drugs.Citalopram + 2;
+	drugs.Fluoxetine = drugs.Fluoxetine + 2;
+	sortList();
+	}
+	else{
+	drugs.Escitalopram = drugs.Escitalopram - 2;
+	drugs.Citalopram = drugs.Citalopram - 2;
+	drugs.Fluoxetine = drugs.Fluoxetine - 2;
 	sortList();
 	}
 }

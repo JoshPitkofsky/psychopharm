@@ -1,3 +1,8 @@
+<!--
+    Antidepressant Recommender 
+    @Josh Pitkofsky
+-->
+
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -7,7 +12,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
+        <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
+
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -39,7 +45,7 @@
                         </div>
 
                         <div onclick="liver();">
-                            <label for="liver"> Liver problems?</label>
+                            <label for="liver"> Liver problems/ Hepatitis?</label>
                             <input type="checkbox" data-role="flipswitch" name="liver" id="liver" data-on-text="yes"  data-off-text="no">
                         </div>
 
@@ -66,6 +72,26 @@
                         <div onclick="adhd();">
                             <label for="adhd"> Does patient have ADHD?</label>
                             <input type="checkbox" data-role="flipswitch" name="adhd" id="adhd" data-on-text="yes"  data-off-text="no">
+                        </div>
+
+                        <div onclick="nasal();">
+                            <label for="nasal"> Is patient on adrenaline like drugs? (anti-athsma, nasal spray, cold medicine)</label>
+                            <input type="checkbox" data-role="flipswitch" name="nasal" id="nasal" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        
+                        <div onclick="diet();">
+                            <label for="diet"> Is patient unwilling to follow strict low Tyramine diet</label>
+                            <input type="checkbox" data-role="flipswitch" name="diet" id="diet" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        
+                        <div onclick="atypical();">
+                            <label for="atypical"> Does patient have atypical depression? (masked depression, anorexia/ bulimia, bipolar)</label>
+                            <input type="checkbox" data-role="flipswitch" name="atypical" id="atypical" data-on-text="yes"  data-off-text="no">
+                        </div>
+
+                        <div onclick="breastfeeding();">
+                            <label for="breastfeeding">Is patient breastfeeding?</label>
+                            <input type="checkbox" data-role="flipswitch" name="breastfeeding" id="breastfeeding" data-on-text="yes"  data-off-text="no">
                         </div>
 
 
