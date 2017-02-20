@@ -166,13 +166,13 @@ function tcaHistory(){
 function insomnia(){
 	var checkedValue = document.getElementById('insomnia').checked;
 	if(checkedValue){
-	drugs.Doxepin = drugs.Doxepin - 2;
-	drugs.Amitripyline = drugs.Amitripyline - 2;
+	drugs.Doxepin = drugs.Doxepin - 3;
+	drugs.Amitripyline = drugs.Amitripyline - 3;
 	sortList();
 	}
 	else{
-	drugs.Doxepin = drugs.Doxepin + 2;
-	drugs.Amitripyline = drugs.Amitripyline + 2;
+	drugs.Doxepin = drugs.Doxepin + 3;
+	drugs.Amitripyline = drugs.Amitripyline + 3;
 	sortList();
 	}
 }
