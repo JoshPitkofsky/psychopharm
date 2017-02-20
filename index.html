@@ -1,8 +1,7 @@
 <!--
-    Antidepressant Recommender 
-    @Josh Pitkofsky
+Antidepressant Recommender
+@Josh Pitkofsky
 -->
-
 <!doctype html>
 <html class="no-js" lang="">
     <head>
@@ -13,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="shortcut icon" type="image/png" href="img/favicon.ico"/>
-
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -38,42 +36,34 @@
             <div data-role="main" class="ui-content">
                 <div class="ui-grid-a ui-responsive">
                     <div class="ui-block-a"><strong>Patient Information</strong>
-
                         <div onclick="antichole();">
                             <label for="antichol"> Are anticholinergic side effects an issue for this patient?</label>
                             <input type="checkbox" data-role="flipswitch" name="antichol" id="antichol" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="liver();">
                             <label for="liver"> Liver problems/ Hepatitis?</label>
                             <input type="checkbox" data-role="flipswitch" name="liver" id="liver" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="tcaHistory();">
                             <label for="tcaHistory"> Does patient or patient's family have history of good response to TCAs?</label>
                             <input type="checkbox" data-role="flipswitch" name="tcaHistory" id="tcaHistory" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="insomnia();">
                             <label for="insomnia"> Does patient have insomnia?</label>
                             <input type="checkbox" data-role="flipswitch" name="insomnia" id="insomnia" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="age();">
                             <label for="age"> Is patient young or elderly?</label>
                             <input type="checkbox" data-role="flipswitch" name="age" id="age" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="panic();">
                             <label for="panic"> Does patient have OCD, panic or anxiety disorder?</label>
                             <input type="checkbox" data-role="flipswitch" name="panic" id="panic" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="adhd();">
                             <label for="adhd"> Does patient have ADHD?</label>
                             <input type="checkbox" data-role="flipswitch" name="adhd" id="adhd" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="nasal();">
                             <label for="nasal"> Is patient on adrenaline like drugs? (anti-athsma, nasal spray, cold medicine)</label>
                             <input type="checkbox" data-role="flipswitch" name="nasal" id="nasal" data-on-text="yes"  data-off-text="no">
@@ -88,30 +78,60 @@
                             <label for="atypical"> Does patient have atypical depression? (masked depression, anorexia/ bulimia, bipolar)</label>
                             <input type="checkbox" data-role="flipswitch" name="atypical" id="atypical" data-on-text="yes"  data-off-text="no">
                         </div>
-
                         <div onclick="breastfeeding();">
                             <label for="breastfeeding">Is patient breastfeeding?</label>
                             <input type="checkbox" data-role="flipswitch" name="breastfeeding" id="breastfeeding" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="seizures();">
+                            <label for="seizures">Does patient have family history of seizures?</label>
+                            <input type="checkbox" data-role="flipswitch" name="seizures" id="seizures" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="weather();">
+                            <label for="weather">Does patient think this is seasonal or may be due to weather?</label>
+                            <input type="checkbox" data-role="flipswitch" name="weather" id="weather" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="bloodpressure();">
+                            <label for="bloodpressure">Is patient taking medication for high blood pressure?</label>
+                            <input type="checkbox" data-role="flipswitch" name="bloodpressure" id="bloodpressure" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="alcoholdependence();">
+                            <label for="alcoholdependence">Is patient dependent on alcohol?</label>
+                            <input type="checkbox" data-role="flipswitch" name="alcoholdependence" id="alcoholdependence" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="multiplemedications();">
+                            <label for="multiplemedications">Is patient on multiple medications?</label>
+                            <input type="checkbox" data-role="flipswitch" name="multiplemedications" id="multiplemedications" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="treatmentresistant();">
+                            <label for="treatmentresistant">Is patient considered treatment resistant?</label>
+                            <input type="checkbox" data-role="flipswitch" name="treatmentresistant" id="treatmentresistant" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="weight();">
+                            <label for="weight">Is body weight maintenance a priority for this patient?</label>
+                            <input type="checkbox" data-role="flipswitch" name="weight" id="weight" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="hormone();">
+                            <label for="hormone">Is patient on an oral contraceptive?</label>
+                            <input type="checkbox" data-role="flipswitch" name="hormone" id="hormone" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="sexualside();">
+                            <label for="sexualside">Are sexual side effects a significant issue for patient?</label>
+                            <input type="checkbox" data-role="flipswitch" name="sexualside" id="sexualside" data-on-text="yes"  data-off-text="no">
+                        </div>
+                        <div onclick="pregnant();">
+                            <label for="pregnant">Is patient pregnant?</label>
+                            <input type="checkbox" data-role="flipswitch" name="pregnant" id="pregnant" data-on-text="yes"  data-off-text="no">
                         </div>
 
 
 
 
-
-
-
-
                     </div>
-
-
-
-
-
                     <div class="ui-block-b"><strong>Recommended Medicine</strong>
                         <br>
                         
                         <ol id = "medlist" data-role="listview" data-inset="true">
-   
+                            
                         </ol></div>
                         
                     </div>

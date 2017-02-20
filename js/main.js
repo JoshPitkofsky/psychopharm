@@ -31,11 +31,13 @@ var Atomoxetine ="Atomoxetine (Strattera)";
 var Reboxetine ="Reboxetine (Vestra)";
 var Modafinil ="Modafinil";
 var Lamotrigine ="Lamotrigine (Lamictal)";
-var quetiapine ="quetiapine (Seroquel)";
+var Quetiapine ="Quetiapine (Seroquel)";
 var Omega_3 ="Omega-3";
 var Folate ="Folate";
 var s_adenosylmethionine = "s-adenosylmethionine";
 var st_johns_wort ="st.john's wort";
+var Aripiprazole = "Aripiprazole (Abilify)";
+var Fluoxetine_Olanzapine = "Fluoxetine / Olanzapine (Symbyax)";
 
 
 var drugs = {
@@ -62,7 +64,8 @@ Clomipramine:0,
 Amoxapine: 2,
 //Can cause seizures, generally not antidepressant of first choice
 Maprotiline: 2,
-Trazodone:0,
+Trazodone:1,
+Aripiprazole:0,
 Desvenlafaxine:0,
 Vilazodone:0,
 Vortioxetine:0,
@@ -70,16 +73,17 @@ Nefazodone:0,
 Phenelzine:0,
 Isocarboxazid:0,
 Tranylcypromine:0,
+Fluoxetine_Olanzapine:0,
 Selegiline:0,
 Atomoxetine:0,
 Reboxetine:0,
 Modafinil:0,
 Lamotrigine:0,
-quetiapine:0,
-Omega_3:2,
-Folate:2,
-s_adenosylmethionine:2,
-st_johns_wort:2
+Quetiapine:0,
+Omega_3:5,
+Folate:5,
+s_adenosylmethionine:5,
+st_johns_wort:5
 }
 sortList();
 function sortList(){
@@ -129,10 +133,18 @@ function liver(){
 	var checkedValue = document.getElementById('liver').checked;
 	if(checkedValue){
 	drugs.Nefazodone = drugs.Nefazodone + 2;
+	drugs.Venlafaxine = drugs.Venlafaxine + 2;
+	drugs.Duloxetine = drugs.Duloxetine + 2;
+	drugs.Trazodone = drugs.Trazodone + 2;
+	drugs.Sertraline = drugs.Sertraline + 2;
 	sortList();
 	}
 	else{
 	drugs.Nefazodone = drugs.Nefazodone - 2;
+	drugs.Venlafaxine = drugs.Venlafaxine - 2;
+	drugs.Duloxetine = drugs.Duloxetine - 2;
+	drugs.Trazodone = drugs.Trazodone - 2;
+	drugs.Sertraline = drugs.Sertraline - 2;
 	sortList();
 	}
 }
@@ -168,11 +180,15 @@ function insomnia(){
 	if(checkedValue){
 	drugs.Doxepin = drugs.Doxepin - 3;
 	drugs.Amitripyline = drugs.Amitripyline - 3;
+	drugs.Mirtazapine = drugs.Mirtazapine - 2;
+	drugs.Quetiapine = drugs.Quetiapine - 2;
 	sortList();
 	}
 	else{
 	drugs.Doxepin = drugs.Doxepin + 3;
 	drugs.Amitripyline = drugs.Amitripyline + 3;
+	drugs.Mirtazapine = drugs.Mirtazapine + 2;
+	drugs.Quetiapine = drugs.Quetiapine + 2;
 	sortList();
 	}
 }
@@ -279,20 +295,28 @@ function diet(){
 function atypical(){
 	var checkedValue = document.getElementById('atypical').checked;
 	if(checkedValue){
+	drugs.Clomipramine = drugs.Clomipramine - 2;
 	drugs.Phenelzine = drugs.Phenelzine - 2;
 	drugs.Isocarboxazid = drugs.Isocarboxazid - 2;
 	drugs.Tranylcypromine = drugs.Tranylcypromine - 2;
 	drugs.Selegiline = drugs.Selegiline - 2;
 	drugs.Venlafaxine = drugs.Venlafaxine + 2;
+	drugs.Vortioxetine = drugs.Vortioxetine + 2;
+	drugs.Duloxetine = drugs.Duloxetine + 2;
 
 	sortList();
 	}
 	else{
+	drugs.Clomipramine = drugs.Clomipramine +2;
 	drugs.Phenelzine = drugs.Phenelzine + 2;
 	drugs.Isocarboxazid = drugs.Isocarboxazid + 2;
 	drugs.Tranylcypromine = drugs.Tranylcypromine + 2;
 	drugs.Selegiline = drugs.Selegiline + 2;
 	drugs.Venlafaxine = drugs.Venlafaxine - 2;
+	drugs.Vortioxetine = drugs.Vortioxetine - 2;
+	drugs.Duloxetine = drugs.Duloxetine - 2;
+
+
 	sortList();
 	}
 }
@@ -312,5 +336,211 @@ function breastfeeding(){
 	sortList();
 	}
 }
+
+function seizures(){
+	var checkedValue = document.getElementById('seizures').checked;
+	if(checkedValue){
+	drugs.Bupropion = drugs.Bupropion + 2;
+	sortList();
+	}
+	else{
+	drugs.Bupropion = drugs.Bupropion - 2;
+	sortList();
+	}
+}
+
+
+function weather(){
+	var checkedValue = document.getElementById('weather').checked;
+	if(checkedValue){
+	drugs.Bupropion = drugs.Bupropion - 1;
+	drugs.Modafinil = drugs.Modafinil - 2;
+	sortList();
+	}
+	else{
+	drugs.Bupropion = drugs.Bupropion + 1;
+	drugs.Modafinil = drugs.Modafinil +2;
+	sortList();
+	}
+}
+
+function bloodpressure(){
+	var checkedValue = document.getElementById('bloodpressure').checked;
+	if(checkedValue){
+	drugs.Venlafaxine = drugs.Venlafaxine + 2;
+	drugs.Duloxetine = drugs.Duloxetine + 2;
+	drugs.Desvenlafaxine = drugs.Desvenlafaxine + 2;
+	sortList();
+	}
+	else{
+	drugs.Venlafaxine = drugs.Venlafaxine - 2;
+	drugs.Duloxetine = drugs.Duloxetine - 2;
+	drugs.Desvenlafaxine = drugs.Desvenlafaxine - 2;
+	sortList();
+	}
+}
+
+function alcoholdependence(){
+	var checkedValue = document.getElementById('alcoholdependence').checked;
+	if(checkedValue){
+	drugs.Escitalopram = drugs.Escitalopram - 2;
+	drugs.Aripiprazole = drugs.Aripiprazole - 2;
+	sortList();
+	}
+	else{
+	drugs.Escitalopram = drugs.Escitalopram + 2;
+	drugs.Aripiprazole = drugs.Aripiprazole + 2;
+	sortList();
+	}
+}
+
+function multiplemedications(){
+	var checkedValue = document.getElementById('multiplemedications').checked;
+	if(checkedValue){
+	drugs.Escitalopram = drugs.Escitalopram - 2;
+	drugs.Citalopram = drugs.Citalopram - 2;
+	drugs.Selegiline = drugs.Selegiline - 2;
+	drugs.Fluoxetine = drugs.Fluoxetine + 2;
+	drugs.Fluvoxamine = drugs.Fluvoxamine + 2;
+	drugs.Sertraline = drugs.Sertraline + 2;
+	drugs.Paroxetine = drugs.Paroxetine + 2;
+	sortList();
+	}
+	else{
+	drugs.Escitalopram = drugs.Escitalopram + 2;
+	drugs.Citalopram = drugs.Citalopram + 2;
+	drugs.Selegiline = drugs.Selegiline + 2;
+	drugs.Fluoxetine = drugs.Fluoxetine - 2;
+	drugs.Fluvoxamine = drugs.Fluvoxamine - 2;
+	drugs.Sertraline = drugs.Sertraline - 2;
+	drugs.Paroxetine = drugs.Paroxetine - 2;
+	sortList();
+	}
+}
+
+function treatmentresistant(){
+	var checkedValue = document.getElementById('treatmentresistant').checked;
+	if(checkedValue){
+	drugs.Fluoxetine_Olanzapine = drugs.Fluoxetine_Olanzapine - 2;
+	drugs.Quetiapine = drugs.Quetiapine - 2;
+	drugs.Aripiprazole = drugs.Aripiprazole - 2;
+	sortList();
+	}
+	else{
+	drugs.Fluoxetine_Olanzapine = drugs.Fluoxetine_Olanzapine + 2;
+	drugs.Quetiapine = drugs.Quetiapine + 2;
+	drugs.Aripiprazole = drugs.Aripiprazole + 2;
+	sortList();
+	}
+}
+
+
+function weight(){
+	var checkedValue = document.getElementById('weight').checked;
+	if(checkedValue){
+	drugs.Mirtazapine = drugs.Mirtazapine - 2;
+	sortList();
+	}
+	else{
+	drugs.Mirtazapine = drugs.Mirtazapine + 2;
+	sortList();
+	}
+}
+
+function hormone(){
+	var checkedValue = document.getElementById('hormone').checked;
+	if(checkedValue){
+	drugs.Fluoxetine = drugs.Fluoxetine + 1;
+	drugs.Fluvoxamine = drugs.Fluvoxamine + 1;
+	drugs.Bupropion = drugs.Bupropion + 1;
+	drugs.Amitripyline = drugs.Amitripyline + 1;
+	drugs.Clomipramine = drugs.Clomipramine + 1;
+	drugs.Desipramine = drugs.desipramine + 1;
+	drugs.Doxepin = drugs.Doxepin + 1;
+	drugs.Imipramine = drugs.Imipramine + 1;
+	drugs.Nortriptyline = drugs.Nortriptyline + 1;
+	drugs.Protriptyline = drugs.Protriptyline + 1;
+	drugs.Trimipramine = drugs.Trimipramine + 1;
+	drugs.Amoxapine = drugs.Amoxapine + 1;
+	drugs.Maprotiline = drugs.Maprotiline + 1;
+
+	sortList();
+	}
+	else{
+	drugs.Fluoxetine = drugs.Fluoxetine - 1;
+	drugs.Fluvoxamine = drugs.Fluvoxamine - 1;
+	drugs.Bupropion = drugs.Bupropion - 1;
+	drugs.Amitripyline = drugs.Amitripyline - 1;
+	drugs.Clomipramine = drugs.Clomipramine - 1;
+	drugs.Desipramine = drugs.desipramine - 1;
+	drugs.Doxepin = drugs.Doxepin - 1;
+	drugs.Imipramine = drugs.Imipramine - 1;
+	drugs.Nortriptyline = drugs.Nortriptyline - 1;
+	drugs.Protriptyline = drugs.Protriptyline - 1;
+	drugs.Trimipramine = drugs.Trimipramine - 1;
+	drugs.Amoxapine = drugs.Amoxapine - 1;
+	drugs.Maprotiline = drugs.Maprotiline - 1;
+	sortList();
+	}
+}
+
+function sexualside(){
+	var checkedValue = document.getElementById('sexualside').checked;
+	if(checkedValue){
+	drugs.Selegiline = drugs.Selegiline - 2;
+	drugs.Bupropion = drugs.Bupropion - 2;
+	drugs.Mirtazapine = drugs.Mirtazapine - 2;
+	drugs.Vilazodone = drugs.Vilazodone - 2;
+	drugs.Citalopram = drugs.Citalopram + 2;
+	drugs.Escitalopram = drugs.Escitalopram + 2;
+	drugs.Fluoxetine = drugs.Fluoxetine + 2;
+	drugs.Paroxetine = drugs.Paroxetine + 2;
+	drugs.Sertraline = drugs.Sertraline + 2;
+	drugs.Venlafaxine = drugs.Venlafaxine + 2;
+	drugs.Duloxetine = drugs.Duloxetine + 2;
+	drugs.Desvenlafaxine = drugs.Desvenlafaxine + 2;
+	drugs.Amitripyline = drugs.Amitripyline + 2;
+	drugs.Nortriptyline = drugs.Nortriptyline + 2;
+	drugs.Clomipramine = drugs.Clomipramine + 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid + 2;
+	drugs.Phenelzine = drugs.Phenelzine + 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine + 2;
+	sortList();
+	}
+	else{
+	drugs.Selegiline = drugs.Selegiline + 2;
+	drugs.Bupropion = drugs.Bupropion + 2;
+	drugs.Mirtazapine = drugs.Mirtazapine + 2;
+	drugs.Vilazodone = drugs.Vilazodone + 2;
+	drugs.Citalopram = drugs.Citalopram - 2;
+	drugs.Escitalopram = drugs.Escitalopram - 2;
+	drugs.Fluoxetine = drugs.Fluoxetine - 2;
+	drugs.Paroxetine = drugs.Paroxetine - 2;
+	drugs.Sertraline = drugs.Sertraline - 2;
+	drugs.Venlafaxine = drugs.Venlafaxine - 2;
+	drugs.Duloxetine = drugs.Duloxetine - 2;
+	drugs.Desvenlafaxine = drugs.Desvenlafaxine - 2;
+	drugs.Amitripyline = drugs.Amitripyline - 2;
+	drugs.Nortriptyline = drugs.Nortriptyline - 2;
+	drugs.Clomipramine = drugs.Clomipramine - 2;
+	drugs.Isocarboxazid = drugs.Isocarboxazid - 2;
+	drugs.Phenelzine = drugs.Phenelzine - 2;
+	drugs.Tranylcypromine = drugs.Tranylcypromine - 2;
+	sortList();
+	}
+}
+
+function pregnant(){
+	var checkedValue = document.getElementById('pregnant').checked;
+	if(checkedValue){
+	drugs.Paroxetine = drugs.Paroxetine + 2;
+	sortList();
+	}
+	else{
+	drugs.Paroxetine = drugs.Paroxetine - 2;
+	sortList();
+	}
+}
+
 
 
