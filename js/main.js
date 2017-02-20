@@ -533,11 +533,19 @@ function sexualside(){
 function pregnant(){
 	var checkedValue = document.getElementById('pregnant').checked;
 	if(checkedValue){
-	drugs.Paroxetine = drugs.Paroxetine + 2;
+	drugs.Paroxetine = drugs.Paroxetine + 3;
+	drugs.Duloxetine = drugs.Duloxetine + 3;
+	drugs.Trazodone = drugs.Trazodone + 3;
+	drugs.Imipramine = drugs.Imipramine + 4;
+	drugs.Nortriptyline = drugs.Nortriptyline + 4;
 	sortList();
 	}
 	else{
-	drugs.Paroxetine = drugs.Paroxetine - 2;
+	drugs.Paroxetine = drugs.Paroxetine - 3;
+	drugs.Duloxetine = drugs.Duloxetine - 3;
+	drugs.Trazodone = drugs.Trazodone - 3;
+	drugs.Imipramine = drugs.Imipramine - 4;
+	drugs.Nortriptyline = drugs.Nortriptyline - 4;
 	sortList();
 	}
 }
